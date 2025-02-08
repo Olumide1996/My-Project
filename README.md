@@ -1,6 +1,8 @@
 # Project Report
 
-### Student Name: Adebisi Olumide  
+### Student Name: Adebisi Olumide 
+### Website Link:
+[My Website](https://olumideadebisiproject.netlify.app/) 
 
 ## Project Task:
 
@@ -20,8 +22,7 @@ This project demonstrates the successful setup, security, and documentation of m
 
 ---
 
-### Website Link:
-[My Website](https://olumideadebisiproject.netlify.app/)
+
 
 ---
 
@@ -78,6 +79,5 @@ This project demonstrates the successful setup, security, and documentation of m
 
 ## Conclusion:
 
-This project successfully demonstrates the application of web development and computer networking concepts. I learned valuable lessons about web deployment, DNS configuration, security, and version control, which I will apply to future projects.
-
+This project has succesfully tested the knowledge of using both web development technology stack as well as network fundamentals and principles
 ---
