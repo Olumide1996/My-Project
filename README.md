@@ -1,7 +1,6 @@
 # Project Report
 
 ### Student Name: Adebisi Olumide  
-### Panther ID: 002676825
 
 ## Project Task:
 
