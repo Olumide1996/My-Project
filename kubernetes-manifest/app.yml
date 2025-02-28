@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project-02
+  namespace: computer-networks
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: project-02
+  template:
+    metadata:
+      labels:
+        app: project-02
+    spec:
+      containers:
+      - name: project-02
+        imagePullPolicy: Always
+        image: donbigi/computer-network:p02
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: project-02-service
+  namespace: computer-networks
+spec:
+  selector:
+    app: project-02
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
