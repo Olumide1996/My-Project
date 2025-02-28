@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - My Website</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Include Google reCAPTCHA script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <header>
@@ -23,7 +25,8 @@
     <main>
         <section class="contact-form">
             <h2>Get in Touch</h2>
-            <form action="submit_form.php" method="POST">
+            <!-- Update action to point to your PHP script -->
+            <form action="contact_form_handler.php" method="POST">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -32,6 +35,9 @@
 
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
+
+                <!-- Google reCAPTCHA -->
+                <div class="g-recaptcha" data-sitekey="6LcM1OUqAAAAAMLaFctq0qRZB4h-MHeOg5m84Roo"></div>
 
                 <button type="submit">Send Message</button>
             </form>
