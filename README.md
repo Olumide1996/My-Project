@@ -1,82 +1,95 @@
-# Project Report
+# Technical Project Report for Computer Networks Project 2
 
-### Student Name: Adebisi Olumide 
-### Website Link: https://projectmide.xyz 
 
-## Project Task:
-
-Set up a website as part of your Computer Networking project. Your task includes:
-
-1. **Domain & Hosting**: Choose a hosting service and set up a domain (can be free or temporary).
-2. **Website Setup**: Create a basic website using HTML, CSS, and optionally JavaScript or a framework of your choice.
-3. **Networking Aspects**: Ensure the site is accessible online and demonstrate knowledge of networking concepts such as DNS, IP addresses, and protocols.
-4. **Documentation**: Submit a report including your website link, a description of the setup process, challenges faced, and how networking principles were applied.
-5. **Bonus**: Implement security features such as HTTPS, firewalls, or access control.
+**Website Link:** My Website  
+**Student Name:** Adebisi Olumide  
 
 ---
 
-## Project Overview:
-
-This project demonstrates the successful setup, security, and documentation of my website project and applies my understanding of both web development and computer networking fundamentals.
-
----
-
-
+## Project Overview
+This project demonstrates the successful upgrade of my website, incorporating key security enhancements and performance improvements. The key upgrades include enabling HTTPS, brute-force login attack prevention, page speed optimization, early hints activation, and improved deployment infrastructure using Docker and Kubernetes.
 
 ---
 
-## Setup Process:
+## Key Improvements and Justifications
+### 1. Enabling HTTPS (SSL Certificate) using Docker containers and Cloudflare
+**Why?** To ensure secure data transmission and consistent code reproduction across platforms using Docker.
 
-### A. Website Setup:
-1. Created my project folder (to house all project files).
-2. Set up basic files: `index.html`, `styles.css`.
-3. Installed **Notepad++** to create my `index.html` website file and structure it.
-4. Used **Notepad++** to create my CSS source file for basic website styling.
-5. Tested locally by accessing `index.html` in Chrome.
+### 2. Preventing Brute-force Login Attacks using "Under Attack" Mode
+**Why?** To enhance website security by requiring users to complete a CAPTCHA before accessing the site.
 
-### B. Setting Up Version Control with Git:
-1. Initialized a Git repository using the command prompt.
-2. Navigated to the project folder and ran the Git initialization command.
-3. Added and committed changes to the Git repository.
-4. Successfully pushed the changes to a GitHub repository.
+### 3. Improved Page Speed and User Experience using Cloudflare CDN & Speed Brain
+**Why?** Performance optimization through caching and leveraging Cloudflare’s Speculation Rules API.
 
-### C. Choosing Hosting Service and Deployment:
-1. **Deployment using Netlify**: I signed up for a free Netlify account.
-2. Connected my Git repository to my Netlify account and selected my active project repository.
-3. Deployed the site and received the following URL: [https://olumideadebisiproject.netlify.app/](https://olumideadebisiproject.netlify.app/).
+### 4. Activating Early Hints
+**Why?** Allows browsers to preload linked assets, reducing load times and improving user experience.
 
-### D. Setting Up a Domain Name:
-1. Signed up on a hosting provider (**Namecheap**) and registered the domain: [https://projectmide.xyz/](https://projectmide.xyz/).
-2. Configured DNS settings by creating a CName record pointing to my chosen domain.
-3. Registered custom DNS nameservers provided by my hosting service.
-4. DNS propagation took a few hours to complete.
-5. Tested the website using the custom domain in Chrome.
-6. Enabled SSL/HTTPS for security, ensuring the site is served securely.
-
-### E. Implementing Networking and Security Aspects:
-- The **domain name server** translates human-readable domain names into machine-readable IP addresses, allowing users to access websites without needing to use IP addresses.
-- **HTTP/HTTPS protocols**: HTTP is the basic protocol for web traffic, and HTTPS secures the connection using SSL certificates.
-- The setup steps were as follows:
-  1. The domain name was translated into the IP address using my DNS servers. I confirmed this using the `nslookup` command.
-  2. **HTTP/HTTPS Protocols**: Netlify automatically provisions SSL certificates via Let's Encrypt.
-  3. **Additional Security**: Netlify provides built-in DDoS protection, firewalls, and OAuth for access control. I implemented OAuth by providing my GitHub client ID and secret key.
+### 5. Deployment & Infrastructure
+- **Deployed as a Docker container in a Kubernetes cluster.**
+- **Made accessible publicly using Cloudflare Tunnel.**
+- **Why?** To enable Continuous Integration and Continuous Deployment (CI/CD).
 
 ---
 
-## Challenges and Lessons Learned:
+## Implementation Details
 
-### Challenges:
-1. Deployment errors from GitHub to Netlify, especially around file placement in the `public` folder, which caused "Fatal error" messages.
-2. DNS propagation delay of around 1 hour, which delayed the availability of my custom domain.
+### Part 1: Security Enhancements (Mandatory)
 
-### Lessons Learned:
-1. **DNS and Domain Configuration**: Setting up DNS records and linking them to the domain can be tricky. I learned that DNS propagation can take time, meaning changes might not be reflected immediately, which required patience during testing.
-2. **The Importance of HTTPS for Security**: Switching from HTTP to HTTPS is crucial for both security and trustworthiness. HTTPS should be prioritized from the beginning of any web project.
-3. **Using Git for Version Control**: Git is essential for managing even smaller projects as it helps organize and safeguard code changes, making it easier to track progress and rollback when needed.
+#### 1. HTTP Encryption: Cloudflare Universal SSL
+**Steps:**
+- Created a Cloudflare account and added the website domain.
+- Enabled "Always Use HTTPS" to redirect all HTTP traffic.
+- Configured TLS settings to ensure encryption.
+
+#### 2. Brute Force Protection: Cloudflare Rate Limiting
+**Steps:**
+- Implemented Cloudflare CAPTCHA challenge to show a JavaScript-based challenge upon website visit.
+
+### Part 2: Additional Enhancements
+
+#### 1. Performance Optimization
+- **Standard Caching Level:** Configured in Cloudflare to cache static content, improving page load times.
+- **Rocket Loader:** Enabled to enhance the loading speed of JavaScript-heavy pages.
+- **CDN Configuration:** Cloudflare caching rules set to store static assets (CSS, images) for one week.
+
+#### 2. Network Monitoring and Security Analysis
+- Activated Cloudflare Web Analytics for monitoring traffic and security threats.
+
+#### 3. Deployment & Infrastructure
+- Migrated website deployment from Netlify to Docker.
+- Integrated Docker with Kubernetes for efficient containerized deployment.
+
+### Bonus Challenge: Automated Deployment with Argo CD
+- Used **Argo CD** to automate syncing deployments with GitHub and Kubernetes clusters running the website pods.
 
 ---
 
-## Conclusion:
+## Challenges & Solutions
 
-This project has succesfully tested the knowledge of using both web development technology stack as well as network fundamentals and principles
+### 1. Google reCAPTCHA Errors (Invalid Domain for Site Key)
+**Challenge:**
+- Persistent errors related to domain mismatches for reCAPTCHA validation.
+
+**Solution:**
+- Migrated to Cloudflare's **"Under Attack Mode"** for enhanced security without reCAPTCHA dependency.
+
+### 2. Backend Server Issues with JavaScript
+**Challenge:**
+- Difficulty in setting up a backend server for the website.
+
+**Solution:**
+- Migrated from Netlify to **Docker Hub**, improving integration with **Visual Studio Code**.
+
+### 3. CSS Not Loading in Docker Image
+**Challenge:**
+- CSS failed to load properly when deployed via Kubernetes.
+
+**Solution:**
+- Discovered Kubernetes is case-sensitive; refactored the codebase to comply with Linux-based deployment.
+
 ---
+
+## Screenshots of Implemented Features
+1. **Brute Force Prevention Using Under Attack Mode**
+![Brute Force Prevention Using Under Attack Mode](https://github.com/Olumide1996/My-Project/raw/main/img/under_attack.jpg)
+2. **Website Interface Preview**
