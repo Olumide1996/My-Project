@@ -1,7 +1,7 @@
-# Technical Project Report for Computer Networks Project 2
+# Computer Networks Project 2
 
 
-**Website Link:** My Website  
+**Website Link:** <https://projectmide.xyz/>
 **Student Name:** Adebisi Olumide  
 
 ---
@@ -90,6 +90,7 @@ This project demonstrates the successful upgrade of my website, incorporating ke
 ---
 
 ## Screenshots of Implemented Features
-1. **Brute Force Prevention Using Under Attack Mode**
+1. **Brute Force Prevention Using Under Attack Mode**:
 ![Brute Force Prevention Using Under Attack Mode](https://github.com/Olumide1996/My-Project/raw/main/img/under_attack.jpg)
-2. **Website Interface Preview**
+2. **Website Interface Preview**:
+![Website Interface Preview](https://github.com/Olumide1996/My-Project/raw/main/img/web_interface.png)
