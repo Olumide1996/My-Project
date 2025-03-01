@@ -16,7 +16,7 @@ spec:
       containers:
       - name: project-02
         imagePullPolicy: Always
-        image: donbigi/computer-network:p02
+        image: oadebisi4/computer-networks:latest
         ports:
         - containerPort: 80
 
